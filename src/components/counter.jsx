@@ -22,6 +22,9 @@ class Counter extends Component{
                     {this.getCount()}
                 </span>
                 <button className="btn btn-secondary btn-sm">Click me </button>
+                <ul>
+                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+                </ul>
             </React.Fragment>
         )
     }
