@@ -3,24 +3,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component{
     state = {
-        tags: ["tag1","tag2","tag3","tag4"]
+        count:0
     }
 
-    renderTags(){
-        if(this.state.tags.length == 0){
-            return "There are no tags"
-        }else{
-            return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
-        }
+    style = {
+        fontSize:15,
+        fontColor:"black"
     }
+
     render(){
+        let classes = this.getClasses(); 
         return(
             // if we dont want a extra div use React.Fragment
-            <React.Fragment>  
-                {this.state.tags.length == 0 && "Please create new tag!!!"}
-                {this.renderTags()}
+           <React.Fragment>  
+                <span style={this.style} className={classes}>
+                    {this.getCount()}
+                </span>
+                <button 
+                onClick={this.handleClick}
+                className="btn btn-secondary btn-sm">Click me </button>
             </React.Fragment>
         )
+    }
+
+    handleClick(){
+        
+    }
+
+    getClasses() {
+        let classes = "badge m-2 bg-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return classes;
+    }
+
+    getCount(){
+    const {count} = this.state // only the count variable is got here 
+    return count === 0 ? "Zero" : count;
     }
 }
 export default Counter;
