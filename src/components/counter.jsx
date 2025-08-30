@@ -11,10 +11,10 @@ class Counter extends Component{
         fontColor:"black"
     }
 
-    constructor(){
-        super();
-        this.handleClick = this.handleClick.bind(this) // this will bind the class object to the event handler method
-    }
+    // constructor(){
+    //     super();
+    //     this.handleClick = this.handleClick.bind(this) // this will bind the class object to the event handler method
+    // }
 
     render(){
         let classes = this.getClasses(); 
@@ -31,8 +31,8 @@ class Counter extends Component{
         )
     }
 
-    handleClick(){
-        console.log(this) // here this will be undefined . 
+    handleClick = () => {
+        console.log(this) // for constructor binding alternative we can use arrow function
     }
 
     getClasses() {
