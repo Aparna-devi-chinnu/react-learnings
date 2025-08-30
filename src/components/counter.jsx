@@ -25,7 +25,7 @@ class Counter extends Component{
                     {this.getCount()}
                 </span>
                 <button 
-                onClick={this.handleClick} // calling this function like this.handleClick() , wont work , bez this mean we are just passing the result of the method
+                onClick={ () => this.handleClick()} //instead we can use arrow function , it will be called only when buton is clicked
                 className="btn btn-secondary btn-sm">Click me </button>
             </React.Fragment>
         )
