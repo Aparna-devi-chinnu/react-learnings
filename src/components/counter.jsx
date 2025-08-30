@@ -11,6 +11,11 @@ class Counter extends Component{
         fontColor:"black"
     }
 
+    constructor(){
+        super();
+        this.handleClick = this.handleClick.bind(this) // this will bind the class object to the event handler method
+    }
+
     render(){
         let classes = this.getClasses(); 
         return(
