@@ -27,7 +27,7 @@ class Counter extends Component{
     }
 
     handleClick(){
-        
+        console.log(this) // here this will be undefined . 
     }
 
     getClasses() {
