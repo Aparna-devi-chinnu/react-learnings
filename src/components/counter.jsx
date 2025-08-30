@@ -25,15 +25,14 @@ class Counter extends Component{
                     {this.getCount()}
                 </span>
                 <button 
-                onClick={this.handleClick}
+                onClick={this.handleClick} // calling this function like this.handleClick() , wont work , bez this mean we are just passing the result of the method
                 className="btn btn-secondary btn-sm">Click me </button>
             </React.Fragment>
         )
     }
 
     handleClick = () => {
-       this.state.count++ // this wont work , bez react is unaware of the change to state
-       this.setState({count: this.state.count+1})
+       this.setState({count:this.state.count+1})
     }
 
     getClasses() {
