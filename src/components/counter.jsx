@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component{
-    state = {
+    state = { //state is a keyword
         count:0
     }
 
@@ -32,7 +32,8 @@ class Counter extends Component{
     }
 
     handleClick = () => {
-        console.log(this) // for constructor binding alternative we can use arrow function
+       this.state.count++ // this wont work , bez react is unaware of the change to state
+       this.setState({count: this.state.count+1})
     }
 
     getClasses() {
